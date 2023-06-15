@@ -1,7 +1,7 @@
 const express=require('express')
 const connectDb=require('./config/db')
 const bodyParser = require('body-parser');
-
+const PORT =process.env.PORT||5000
 
 const app=express();
 app.use(express.json());
@@ -21,6 +21,6 @@ app.use('/edittask',require('./router/editTask'));
 //Gettask
 app.use('/gettask',require('./router/getTask'));
 
-app.listen(5000,()=>{
-    console.log("listening on port 5000")
+app.listen(PORT,()=>{
+    console.log(`listening on port ${PORT}`)
 })
